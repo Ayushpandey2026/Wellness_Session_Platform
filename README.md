@@ -25,47 +25,60 @@ A secure wellness platform where users can:
 ### 1️⃣ Backend
 
 cd backend
-cp .env.example .env      # fill in your credentials
+
+cp .env.example .env  # fill in your credentials
+
 npm install
+
 npm run dev               # uses nodemon
 
 
  2️⃣ Frontend
+ 
 cd frontend
+
 npm install
+
 npm run dev
+
+---
 
 🌐 Routes
 
 🔐 Auth
-Method	 Endpoint	         Description
-POST	/api/auth/register	 Create user
-POST	/api/auth/login	     Get JWT
+| Method | Endpoint             | Description   |
+| ------ | -------------------- | ------------- |
+| POST   | `/api/auth/register` | Create user   |
+| POST   | `/api/auth/login`    | Get JWT token |
+
 
 📘 Sessions
-Method	Endpoint	              Description
-GET	  /api/sessions	               Public sessions
-GET	  /api/my-sessions	           All my sessions
-GET	  /api/my-sessions/:id	       Single session
-POST  /api/my-sessions/save-draft  Save/update draft
-POST  /api/my-sessions/publish	   Publish session
+| Method | Endpoint                      | Description       |
+| ------ | ----------------------------- | ----------------- |
+| GET    | `/api/sessions`               | Public sessions   |
+| GET    | `/api/my-sessions`            | All my sessions   |
+| GET    | `/api/my-sessions/:id`        | Single session    |
+| POST   | `/api/my-sessions/save-draft` | Save/update draft |
+| POST   | `/api/my-sessions/publish`    | Publish session   |
 
 
+---
 🧠 Session Schema
-{
-  _id,
-  user_id,
-  title,
-  tags: [String],
-  json_file_url: String,
-  status: "draft" | "published",
-  created_at,
-  updated_at
-}
+| Field           | Type      | Description                 |
+| --------------- | --------- | --------------------------- |
+| `_id`           | ObjectId  | Unique session ID           |
+| `user_id`       | ObjectId  | Reference to user           |
+| `title`         | String    | Session title               |
+| `tags`          | \[String] | List of tags                |
+| `json_file_url` | String    | URL of uploaded JSON file   |
+| `status`        | String    | "draft" \| "published"      |
+| `created_at`    | Date      | Timestamp when created      |
+| `updated_at`    | Date      | Timestamp when last updated |
 
 
+---
 📦 Folder Structure
-Automation_Demo/
+<details> <summary><code>Arvyax/
 ├── backend/
 │   ├── routes/
 │   ├── models/
@@ -75,5 +88,14 @@ Automation_Demo/
 │   ├── src/components/
 │   ├── src/pages/
 │   ├── src/utils/axiosConfig.js
-│   └── App.jsx
+│   └── App.jsx</code></summary>
 
+---
+## 👨‍💻 Author
+
+- [Ayush Pandey](https://github.com/Ayushpandey2026)
+  
+## 📬 Contact
+
+For any questions or suggestions, feel free to reach out:  
+📧 ayushpandey02003@gmail.com 
