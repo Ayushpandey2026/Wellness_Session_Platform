@@ -89,7 +89,6 @@ export default function SessionEditor() {
       };
       const res = await api.post("/my-sessions/save-draft", payload);
       if (!id && res.data?._id) {
-        // If new draft was created, move to edit URL
         navigate(`/editor/${res.data._id}`, { replace: true });
       }
       setStatus("draft");
@@ -97,10 +96,10 @@ export default function SessionEditor() {
       if (!isAuto) {
         toast({ title: "Draft saved", status: "success", duration: 1500 });
       } else {
-        // show subtle toast only for first auto save or use badge (we update lastSavedAt)
+        
       }
     } catch (e) {
-      // if backend responded with 400 "Nothing to save" we silently ignore auto saves
+
       const msg = e?.response?.data?.message || "Save failed";
       if (!isAuto) toast({ title: msg, status: "error" });
     } finally {
@@ -124,10 +123,8 @@ export default function SessionEditor() {
         json_file_url: (jsonUrl || "").toString().trim(),
       };
       const res = await api.post("/my-sessions/publish", payload);
-      // backend returns updated/created doc
       setStatus("published");
       toast({ title: "Session published", status: "success" });
-      // After publish, redirect to My Sessions to show it in list
       navigate("/my-sessions");
     } catch (e) {
       const msg = e?.response?.data?.message || "Publish failed";
