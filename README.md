@@ -77,6 +77,7 @@ npm run dev
 
 
 ---
+
 📦 Folder Structure
 <details> <summary><code>Arvyax/
 ├── backend/
@@ -92,10 +93,10 @@ npm run dev
 
 ---
 ## 👨‍💻 Author
-
 - [Ayush Pandey](https://github.com/Ayushpandey2026)
-  
+
 ## 📬 Contact
 
 For any questions or suggestions, feel free to reach out:  
 📧 ayushpandey02003@gmail.com 
+
